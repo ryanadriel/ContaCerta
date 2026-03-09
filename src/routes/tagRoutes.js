@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const tagController = require('../controllers/tagController');
+
+router.get('/', tagController.index);
+router.get('/:id', tagController.show);
+router.post('/', tagController.store);
+router.put('/:id', tagController.update);
+router.delete('/:id', tagController.delete);
+
+module.exports = router;
