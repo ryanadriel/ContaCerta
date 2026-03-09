@@ -46,7 +46,7 @@ exports.store = async (req, res) => {
       return res.status(400).json({ message: 'Perfil não criado' });
     }
 
-    await User.findByIdAndUpdate(req.body.user_id || req.body.user, { profile: profile._id });
+    await User.findByIdAndUpdate(req.body.user_id, { profile: profile._id });
 
     res.status(201).json(profile);
   } catch (error) {
